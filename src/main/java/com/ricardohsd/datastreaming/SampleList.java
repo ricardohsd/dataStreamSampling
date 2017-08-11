@@ -10,7 +10,7 @@ public class SampleList<T> implements Iterable<T> {
 
     private int replaceTimes;
     private final int capacity;
-    private final ArrayList<T> characterList;
+    private final List<T> characterList;
     private final Random rand;
 
     public SampleList(int capacity, Random rand) {
@@ -48,30 +48,10 @@ public class SampleList<T> implements Iterable<T> {
     }
 
     public Iterator<T> iterator() {
-        return new SampleListIterator();
+        return this.characterList.iterator();
     }
 
     public int randIndex() {
         return rand.nextInt(capacity);
-    }
-
-    class SampleListIterator implements Iterator<T> {
-        private int index = 0;
-
-        public boolean hasNext() {
-            return index < size();
-        }
-
-        public T next() {
-            T value = characterList.get(index);
-
-            index++;
-
-            return value;
-        }
-
-        public void remove() {
-            characterList.remove(index);
-        }
     }
 }

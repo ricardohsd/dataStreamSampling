@@ -8,10 +8,10 @@ import java.security.SecureRandom;
 import java.util.Random;
 
 public class SamplerProcessor {
-    public final BufferedReader dataStream;
-    public final SampleList<Character> sampleList;
-    public final SampleListPrinter samplePrinter;
-    public final Random rand = new SecureRandom();
+    private final BufferedReader dataStream;
+    private final SampleList<Character> sampleList;
+    private final SampleListPrinter samplePrinter;
+    private final Random rand = new SecureRandom();
 
     public SamplerProcessor(Integer sampleSize, InputStream input) {
         this.dataStream = new BufferedReader(new InputStreamReader(input));

@@ -1,7 +1,7 @@
 package com.ricardohsd.datastreaming;
 
 public class SampleListPrinter {
-    public final Iterable sampleList;
+    private final Iterable sampleList;
 
     public SampleListPrinter(Iterable sampleList) {
         this.sampleList = sampleList;
